@@ -108,7 +108,7 @@ class Seq2SeqModel(object):
     def seq2seq_f(encoder_inputs, decoder_inputs, do_decode):
       return seq2seq.embedding_attention_seq2seq(
           encoder_inputs, decoder_inputs, cell, source_vocab_size,
-          target_vocab_size, output_projection=output_projection,
+          target_vocab_size, cell.input_size, output_projection=output_projection,
           feed_previous=do_decode)
 
     # Feeds for inputs.
